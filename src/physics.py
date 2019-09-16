@@ -31,8 +31,8 @@ class HitBoxComponent(ecs.Component):
 
     def __init__(self):
         super().__init__()
-        xform_state = p3d.TransformState.make_pos(p3d.LVector3f(0, 0, 0.9))
-        shape = bullet.BulletBoxShape(p3d.LVector3f(0.25, 0.25, 0.8))
+        xform_state = p3d.TransformState.make_pos(p3d.LVector3(0, 0, 0.9))
+        shape = bullet.BulletBoxShape(p3d.LVector3(0.25, 0.25, 0.8))
         self.physics_node = bullet.BulletGhostNode('HitBox')
         self.physics_node.add_shape(shape, xform_state)
         self.physics_node.set_python_tag('component', self)
